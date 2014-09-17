@@ -1,0 +1,10 @@
+Checkout Kata
+Fibbonacci Sequence
+Calculator
+Roman Numeral Convertor
+Tennis Scorer
+Bowling Scorer
+Golf Scorer
+Anagrams
+Sorting It Out
+CSV Reader
