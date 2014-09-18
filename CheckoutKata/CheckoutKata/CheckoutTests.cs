@@ -15,37 +15,61 @@ namespace CheckoutKata
 		[Test]
 		public void EmptyBasketTest()
 		{
-			Assert.That(_checkout.BasketScan(""), Is.EqualTo(0));
+			Assert.That(_checkout.GoShopping(""), Is.EqualTo(0));
 		}
 
 		[Test]
 		public void ItemABasketTest()
 		{
-			Assert.That(_checkout.BasketScan("A"), Is.EqualTo(50));
+			Assert.That(_checkout.GoShopping("A"), Is.EqualTo(50));
 		}
 
 		[Test]
 		public void ItemBBasketTest()
 		{
-			Assert.That(_checkout.BasketScan("B"), Is.EqualTo(30));
+			Assert.That(_checkout.GoShopping("B"), Is.EqualTo(30));
 		}
 
 		[Test]
 		public void ItemCBasketTest()
 		{
-			Assert.That(_checkout.BasketScan("C"), Is.EqualTo(20));
+			Assert.That(_checkout.GoShopping("C"), Is.EqualTo(20));
 		}
 
 		[Test]
 		public void ItemDBasketTest()
 		{
-			Assert.That(_checkout.BasketScan("D"), Is.EqualTo(15));
+			Assert.That(_checkout.GoShopping("D"), Is.EqualTo(15));
 		}
 
 		[Test]
 		public void MultiUniqueItemsTest()
 		{
-			Assert.That(_checkout.BasketScan("ABCD"), Is.EqualTo(115));
+			Assert.That(_checkout.GoShopping("ABCD"), Is.EqualTo(115));
+		}
+
+		[Test]
+		public void MulibuyATest()
+		{
+			Assert.That(_checkout.GoShopping("AAA"), Is.EqualTo(130));
+		}
+
+		[Test]
+		public void MulibuyBTest()
+		{
+			Assert.That(_checkout.GoShopping("BB"), Is.EqualTo(45));
+		}
+
+		[Test]
+		public void MulitipleMultibuysTest()
+		{
+			Assert.That(_checkout.GoShopping("ABABABB"), Is.EqualTo(220));
+		}
+
+		[Test]
+		public void BigBasketTest1()
+		{
+			Assert.That(_checkout.GoShopping("ABABABCCD"), Is.EqualTo(260));
 		}
 	}
 }
